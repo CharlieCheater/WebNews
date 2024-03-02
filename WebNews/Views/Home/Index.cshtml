@@ -1,0 +1,30 @@
+﻿@using WebNews.Domain;
+@model IEnumerable<Publication>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+</div>
+<a class="btn btn-primary" asp-controller="Admin" asp-action="CreatePost">Добавить новость</a>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        <div class="col col-4">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">@item.Title</h3>
+                </div>
+                <div class="card-body">
+                    @item.Description
+                </div>
+                <div class="card-footer">
+                    @item.Author
+                </div>
+            </div>
+        </div>
+    }
+</div>

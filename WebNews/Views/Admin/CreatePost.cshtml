@@ -1,0 +1,24 @@
+﻿@model CreatePostViewModel
+@{
+    ViewData["Title"] = "Добавление новости";
+}
+<div class="row">
+    <form asp-action="CreatePost">
+        <div class="form-group">
+            <label>Автор:</label>
+            <input class="form-control" asp-for="Author" placeholder="Обязательное" />
+            <span asp-validation-for="Author"></span>
+        </div>
+        <div class="form-group">
+            <label>Заголовок:</label>
+            <input class="form-control" asp-for="Title" placeholder="Обязательное" />
+            <span asp-validation-for="Title"></span>
+        </div>
+        <div class="form-group">
+            <label>Описание:</label>
+            <textarea class="form-control" asp-for="Description" placeholder="Обязательное"></textarea>
+            <span asp-validation-for="Description"></span>
+        </div>
+        <button type="submit" class="btn btn-success">Добавить</button>
+    </form>
+</div>
